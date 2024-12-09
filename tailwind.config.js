@@ -37,6 +37,20 @@ export default {
           backgroundColor: theme('backgroundColor.primary-dark'),
           color: theme('colors.primary-light'),
         },
+        '::-webkit-scrollbar': {
+          width: '7px',
+          height: '4px',
+        },
+        '::-webkit-scrollbar-track': {
+          background: '#4949492c',
+        },
+        '::-webkit-scrollbar-thumb': {
+          backgroundColor: '#424242',
+          borderRadius: '10px',
+        },
+        '::-webkit-scrollbar-thumb:hover': {
+          backgroundColor: '#555',
+        },
       });
       addUtilities({
         '::selection': {
