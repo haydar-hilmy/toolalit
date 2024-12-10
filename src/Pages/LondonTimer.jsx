@@ -65,13 +65,17 @@ const LondonTimer = () => {
             clearInterval(timerInterval);
         }
 
-        const interval = setInterval(() => {
-            setSecondsRemaining((prev) => prev - 1); // Tidak ada lagi pengecekan untuk <= 0
 
-            // Jika sudah lewat 0, bisa mengatur animasi atau efek lain jika diperlukan
-            if (secondsRemaining <= 0) {
-                document.body.style.animationName = 'blinkFast'; // Contoh animasi jika negatif
-            }
+        const interval = setInterval(() => {
+            setSecondsRemaining((prev) => {
+                const newRemaining = prev - 1;
+                // Jika sudah lewat 0, bisa mengatur animasi atau efek lain jika diperlukan
+                if (newRemaining <= 0) {
+                    document.body.style.animationName = 'blinkFast'; // Contoh animasi jika negatif
+                }
+                return newRemaining;
+            });
+
         }, 1000);
 
         setTimerInterval(interval);
