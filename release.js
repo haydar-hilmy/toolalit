@@ -28,7 +28,7 @@ try {
 
   // Jalankan git push
   console.log('Pushing changes...');
-  execSync('git push origin main', { stdio: 'inherit' });
+  execSync('git push main main', { stdio: 'inherit' });
 
   console.log('Release process complete!');
 } catch (error) {
