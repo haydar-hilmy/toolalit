@@ -3,6 +3,7 @@ const _404_ = (props) => {
     const {
         statusCode = 404,
         statusText = 'Lost in Bucket',
+        statusDesc = "Astronauts aren't the only ones who get lost in bucket. Looks like you’ve taken a wrong turn. Let’s get you back on track!"
     } = props
 
     return (
@@ -15,7 +16,7 @@ const _404_ = (props) => {
                 <h2 className="text-xl font-normal">{statusText}</h2>
             </div>
             <span className="w-[90%] sm:w-3/4 md:w-1/2 text-center tracking-wide mt-4 text-base font-light">
-                Astronauts aren't the only ones who get lost in bucket. Looks like you’ve taken a wrong turn. Let’s get you back on track!
+                {statusDesc}
             </span>
         </div>
     )
