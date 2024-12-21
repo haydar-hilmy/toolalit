@@ -17,7 +17,8 @@ const LabeledInput = (props) => {
         maxlength,
         info = "",
         value,
-        required = null
+        required = null,
+        disabled = null
     } = props
 
 
@@ -25,6 +26,7 @@ const LabeledInput = (props) => {
         <div className="flex flex-col w-full gap-1">
             <label htmlFor={name} className="text-base text-[#c0c0c0] pl-3">{text}</label>
             <MainInput
+                disabled={disabled != null ? disabled : false}
                 required={required != null ? required : ""}
                 onblur={onblur}
                 value={value}

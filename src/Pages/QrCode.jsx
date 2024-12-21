@@ -81,7 +81,7 @@ const QrCode = () => {
             <div className="h-screen flex items-center justify-center flex-col gap-3">
                 {qrCodeUrl && <img src={qrCodeUrl} alt="Generated QR Code" />}
                 {
-                    showTitleQRCode ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
+                    showTitleQRCode == true ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
                 }
             </div>
             <div id="option-content" className="h-4/5 md:h-screen flex flex-col md:flex-row items-center justify-evenly gap-3 bg-primary-dark">
@@ -89,7 +89,7 @@ const QrCode = () => {
                     [ Preview ]
                     {qrCodeUrl && <img src={qrCodeUrl} alt="Generated QR Code" />}
                     {
-                        showTitleQRCode ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
+                        showTitleQRCode == true ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
                     }
                 </div>
 
@@ -129,10 +129,20 @@ const QrCode = () => {
                         type="text"
                         name="valueQRCODE"
                     />
+                    <LabeledInput
+                        required={null}
+                        text="Set Title"
+                        placeholder="enter title"
+                        onchange={(e) => setTitleQRCode(e.target.value)}
+                        value={titleQRCode}
+                        type="text"
+                        name="valueTitleQRCode"
+                        disabled={showTitleQRCode ? true : false}
+                    />
                     <CheckboxLabel
-                        onchange={(e) => setShowTitleQRCode(!e.target.checked)}
+                        onchange={(e) => setShowTitleQRCode(e.target.checked)}
                         text="Show Title?"
-                        value={showTitleQRCode}
+                        checked={showTitleQRCode}
                     />
                     <MainButton
                         text="Generate"

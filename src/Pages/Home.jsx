@@ -28,7 +28,7 @@ const Home = () => {
     return (
         <div className="px-5 sm:px-10">
             <div id="particleContainer" style={{ zIndex: 0, position: "fixed", height: "100vh", width: "100vw", opacity: 0.2 }}></div>
-            <div style={{ borderBottomColor: "#2d2d2d", position: "relative", zIndex: 4 }} className="flex flex-row mt-10 pb-5 border-b-2">
+            <div style={{ borderBottomColor: "#2d2d2d", position: "relative", zIndex: 4 }} className="flex flex-col sm:flex-row mt-10 pb-5 border-b-2 gap-4">
                 <div style={{ flex: 1 }} className="flex flex-col gap-2">
                     <h1 style={{ fontFamily: "Ubuntu" }} className="text-5xl">
                         Toolalit
@@ -42,7 +42,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 items-stretch sm:grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+            <div className="grid grid-cols-1 items-stretch sm:grid-cols-2 md:grid-cols-3 gap-3 my-5">
                 {
                     ToolsData.map((data, index) => (
                         <div key={index}>

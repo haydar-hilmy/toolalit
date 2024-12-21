@@ -14,13 +14,15 @@ const MainInput = (props) => {
         id,
         info = "",
         value,
-        required = null
+        required = null,
+        disabled = null
     } = props
 
     return (
         <div className="flex flex-col gap-1">
             <input
                 required={required != null ?required : ""}
+                disabled={disabled != null ?disabled : false}
                 onBlur={onblur}
                 value={value}
                 id={id}
@@ -28,7 +30,7 @@ const MainInput = (props) => {
                 min={min}
                 maxLength={maxlength}
                 autoFocus={autofocus}
-                className={`${variant} px-5 py-2 rounded-md bg-secondary-dark border border-[#214d8f] outline-none focus:outline-1 focus:outline-[#0066ff]`} type={type} name={name} onInput={oninput} onChange={onchange} placeholder={placeholder} />
+                className={`${variant} disabled:opacity-50 px-5 py-2 rounded-md bg-secondary-dark border border-[#214d8f] outline-none focus:outline-1 focus:outline-[#0066ff]`} type={type} name={name} onInput={oninput} onChange={onchange} placeholder={placeholder} />
             {
                 info != "" ? (
                     <>
