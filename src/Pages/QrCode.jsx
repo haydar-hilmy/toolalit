@@ -49,8 +49,11 @@ const QrCode = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        window.scrollTo(0, 0);
         if (text.trim()) {
-            generateQR(text);
+            setTimeout(() => {
+                generateQR(text);
+            }, 1000);
         }
     };
 
@@ -81,15 +84,16 @@ const QrCode = () => {
                     showTitleQRCode ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
                 }
             </div>
-            <div id="option-content" className="h-screen flex items-center justify-evenly gap-3 bg-primary-dark">
-                <div className="h-screen flex items-center justify-center flex-col gap-3">
+            <div id="option-content" className="h-4/5 md:h-screen flex flex-col md:flex-row items-center justify-evenly gap-3 bg-primary-dark">
+                <div className="hidden md:h-screen md:flex items-center justify-center flex-col gap-3">
+                    [ Preview ]
                     {qrCodeUrl && <img src={qrCodeUrl} alt="Generated QR Code" />}
                     {
                         showTitleQRCode ? <StyledTitle>{titleQRCode}</StyledTitle> : ""
                     }
                 </div>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 my-10">
                     <LabeledInput
                         text="Size QRCode"
                         placeholder="enter value of size"
@@ -125,15 +129,14 @@ const QrCode = () => {
                         type="text"
                         name="valueQRCODE"
                     />
-
-                    <MainButton
-                        text="Generate"
-                        type={"submit"}
-                    />
                     <CheckboxLabel
                         onchange={(e) => setShowTitleQRCode(!e.target.checked)}
                         text="Show Title?"
                         value={showTitleQRCode}
+                    />
+                    <MainButton
+                        text="Generate"
+                        type={"submit"}
                     />
                 </form>
             </div>

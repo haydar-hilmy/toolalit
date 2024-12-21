@@ -33,6 +33,9 @@ export default {
   plugins: [
     plugin(function ({ addBase, theme, addUtilities }) {
       addBase({
+        'html': {
+          scrollBehavior: 'smooth',
+        },
         'body': {
           backgroundColor: theme('backgroundColor.primary-dark'),
           color: theme('colors.primary-light'),
