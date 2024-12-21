@@ -26,6 +26,8 @@ const QrCode = () => {
     const StyledTitle = styled.h1`
     font-size: calc(1*${sizeTitle}rem);
     font-weight: 600;
+    text-align: center;
+    width: 85%;
     `
 
 
