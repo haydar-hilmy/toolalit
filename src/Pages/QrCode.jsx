@@ -137,7 +137,7 @@ const QrCode = () => {
                         value={titleQRCode}
                         type="text"
                         name="valueTitleQRCode"
-                        disabled={showTitleQRCode ? true : false}
+                        disabled={showTitleQRCode == true ? false : true}
                     />
                     <CheckboxLabel
                         onchange={(e) => setShowTitleQRCode(e.target.checked)}
