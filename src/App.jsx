@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { _404_ } from './Pages/404';
+import { ErrorRoute } from './Pages/ErrorRoute';
 import Home from './Pages/Home';
 import LondonTimer from './Pages/LondonTimer';
 import QrCode from './Pages/QrCode';
@@ -20,7 +20,7 @@ const myRouter = createBrowserRouter([
   },
   {
     path: "*",
-    element: <_404_ />
+    element: <ErrorRoute />
   }
 ]);
 

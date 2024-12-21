@@ -1,10 +1,42 @@
 const MainInput = (props) => {
-    const { onchange, oninput, type, variant, placeholder, name, autofocus } = props
+    const {
+        onchange,
+        oninput,
+        onblur,
+        type,
+        variant,
+        placeholder,
+        name,
+        autofocus,
+        maxlength,
+        max,
+        min,
+        id,
+        info = "",
+        value,
+        required = null
+    } = props
 
     return (
-        <>
-            <input autoFocus={autofocus} className={`${variant} px-5 py-2 rounded-md bg-secondary-dark border border-[#214d8f] outline-none focus:outline-1 focus:outline-[#0066ff]`} type={type} name={name} onInput={oninput} onchange={onchange} placeholder={placeholder}  />
-        </>
+        <div className="flex flex-col gap-1">
+            <input
+                required={required != null ?required : ""}
+                onBlur={onblur}
+                value={value}
+                id={id}
+                max={max}
+                min={min}
+                maxLength={maxlength}
+                autoFocus={autofocus}
+                className={`${variant} px-5 py-2 rounded-md bg-secondary-dark border border-[#214d8f] outline-none focus:outline-1 focus:outline-[#0066ff]`} type={type} name={name} onInput={oninput} onChange={onchange} placeholder={placeholder} />
+            {
+                info != "" ? (
+                    <>
+                        <span className="text-sm font-normal pl-3 select-none opacity-80">{info}</span>
+                    </>
+                ) : ""
+            }
+        </div>
     )
 }
 

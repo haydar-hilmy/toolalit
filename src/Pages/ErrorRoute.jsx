@@ -1,4 +1,4 @@
-const _404_ = (props) => {
+const ErrorRoute = (props) => {
 
     const {
         statusCode = 404,
@@ -22,4 +22,4 @@ const _404_ = (props) => {
     )
 }
 
-export { _404_ }
+export { ErrorRoute }
