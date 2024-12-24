@@ -4,6 +4,7 @@ import { ErrorRoute } from './Pages/ErrorRoute';
 import Home from './Pages/Home';
 import LondonTimer from './Pages/LondonTimer';
 import QrCode from './Pages/QrCode';
+import RandomName from './Pages/RandomName';
 
 const myRouter = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const myRouter = createBrowserRouter([
   {
     path: "/qrcode",
     element: <QrCode />
+  },
+  {
+    path: "/random-name",
+    element: <RandomName />
   },
   {
     path: "*",
