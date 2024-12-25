@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { getImagesFromIndexedDB, openDatabase, saveImageToIndexedDB } from '../Functions/IndexedDB';
 import { convertFileToBase64 } from '../Functions/FileHandler';
 import LabelMainButton from '../Components/Elements/Button/LabelMainButton';
-import PaperAdd from '../Components/Icons/paperadd';
 import MainButton from '../Components/Elements/Button/MainButton';
 import $ from 'jquery'
 
